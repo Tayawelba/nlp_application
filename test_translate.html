@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      body{
+        display: grid;
+        place-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hugging Face test 2</h1>
+
+    <h2>Select an image</h2>
+
+    <input type="text" id="translateInput">
+
+    <br>
+    
+
+    <h2 id="result_translate"></h2>
+
+  </body>
+
+  <script>
+
+    url='https://api-inference.huggingface.co/models/Helsinki-NLP/opus-mt-fr-en'
+
+
+    document.getElementById("translateInput").addEventListener("change",function(event){
+      let res
+
+      const text = event.target.value
+
+      const data={
+        inputs:text
+      }
+      
+      fetch (url, {
+        method: "POST",
+        headers: {
+          Authorization: 'Bearer hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response=>response.json())
+      .then(data=>{
+
+        res=data[0].translation_text
+        document.getElementById("result_translate").innerText=res
+        
+
+      })
+      .catch((e=>{
+        console.log(e)
+      }))
+    })
+
+</script>
+
+</html>

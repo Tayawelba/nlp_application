@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      body{
+        display: grid;
+        place-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hugging Face test 2</h1>
+
+    <h2>Select an image</h2>
+
+    <input type="file" id="imageInput" accept="image/*">
+
+    <br>
+    
+    <img src="#" id="preview" alt="img">
+
+    <h2 id="result"></h2>
+
+  </body>
+<!-- Js file for function image-to-text in the app -->
+<script src="assets\js\image-to-text.js"></script>
+</html>

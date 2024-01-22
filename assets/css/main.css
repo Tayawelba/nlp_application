@@ -1,0 +1,15 @@
+.disabled-zone {
+    pointer-events:none;
+    opacity: 0.4;
+}
+.apply-status{
+    pointer-events:visible;
+    cursor: copy;
+    opacity: 1;
+}
+section {
+    height: 100vh;
+    margin-top: 50px;
+    padding: 70px 30px;
+  }
+  
